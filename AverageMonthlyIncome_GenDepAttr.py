@@ -199,7 +199,7 @@ def create_female_bar_plot(selected_attrition, selected_department):
     female_grouped = female_data.groupby(['Department', 'Attrition'])['MonthlyIncome'].mean().unstack()
 
     # Create the plot
-    fig, ax = plt.subplots(figsize=(6, 4))
+    fig, ax = plt.subplots(figsize=(6, 2))
     female_grouped.plot(kind='bar', ax=ax, color=['blue', 'lightblue'], edgecolor='black')
     
     # Set title and labels
@@ -231,7 +231,7 @@ def create_male_bar_plot(selected_attrition, selected_department):
     male_grouped = male_data.groupby(['Department', 'Attrition'])['MonthlyIncome'].mean().unstack()
 
     # Create the plot
-    fig, ax = plt.subplots(figsize=(6, 4))
+    fig, ax = plt.subplots(figsize=(6, 2))
     male_grouped.plot(kind='bar', ax=ax, color=['orange', 'lightcoral'], edgecolor='black')
 
     # Set title and labels
@@ -255,8 +255,8 @@ male_barplot_panel = pn.bind(create_male_bar_plot, selected_attrition=attrition_
 
 
 # Text label above the gender selection widget
-selection_text_one = pn.pane.Markdown("### Uncheck the box below to display the average monthly income for employees who have left the company.")
-selection_text_two = pn.pane.Markdown("### Uncheck the boxes below to filter the departments for which you want to see average income data.")
+selection_text_one = pn.pane.Markdown("Uncheck the box below to display the average monthly income for employees who have left the company.")
+selection_text_two = pn.pane.Markdown("Uncheck the boxes below to filter the departments for which you want to see average income data.")
 
 # Define the layout for the top row and bottom row
 top_row_layout = pn.Row(female_plot_panel,female_barplot_panel)
