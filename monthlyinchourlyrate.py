@@ -1,10 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# <a href="https://colab.research.google.com/github/abdyraman/hr-deep-learning/blob/main/deep_hr.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
-
-# In[24]:
-
 
 import streamlit as st
 import pandas as pd
@@ -14,25 +7,9 @@ import holoviews as hv
 import panel as pn
 pn.extension("tabulator","echarts", "plotly", "vega", "vizzu")
 
-
-# In[25]:
-
-
 df_full = pd.read_csv('WA_Fn-UseC_-HR-Employee-Attrition.csv')
-
-
-# **Data cleaning**
-
-# In[26]:
-
-
 # remove 4 columns
 df = df_full.drop(['Over18', 'EmployeeNumber','EmployeeCount','StandardHours'],axis=1)
-
-
-# In[27]:
-
-
 idf=df.interactive()
 
 
